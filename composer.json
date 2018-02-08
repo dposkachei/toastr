@@ -1,0 +1,38 @@
+{
+    "name": "bulk/toastr",
+    "description": "Laravel toastr notification",
+    "keywords": [
+        "bulk",
+        "toastr"
+    ],
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Dmitry Poskachey",
+            "email": "dposkachei@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^7.0",
+        "laravel/framework": "5.4.*"
+    },
+    "require-dev": {
+        "mockery/mockery": "^0.9.8",
+        "orchestra/testbench": "^3.4.5",
+        "phpunit/phpunit": "^5.7"
+    },
+    "autoload": {
+        "psr-4": {
+            "Bulk\\Toastr\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Bulk\\Toastr\\Test\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit"
+    }
+}
