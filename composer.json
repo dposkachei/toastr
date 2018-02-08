@@ -8,7 +8,7 @@
     "type": "library",
     "license": "MIT",
     "homepage": "https://github.com/dposkachei/toastr",
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "authors": [
         {
             "name": "Dmitry Poskachey",
