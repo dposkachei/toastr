@@ -30,7 +30,7 @@ class Toastr
     protected $config;
 
     private $allowedTypes = ['error', 'info', 'success', 'warning', 'primary'];
-    private $allowedTitles = ['Error', 'Info', 'Success', 'Warning', 'Primary'];
+    private $allowedTitles = ['error', 'Info', 'Success', 'Warning', 'Primary'];
 
     /**
      * Constructor
