@@ -118,7 +118,7 @@ class Toastr
      */
     public function render()
     {
-        if ($this->session->get('toastr::notifications')) {
+        if (!$this->session->get('toastr::notifications')) {
             return false;
         }
         $notifications = $this->session->get('toastr::notifications');
@@ -139,7 +139,7 @@ class Toastr
 
             // Config persists between toasts
             if ($config != $lastConfig) {
-                $output .= 'toastr.options = ' . json_encode($config) . ';';   
+                $output .= 'toastr.options = ' . json_encode($config) . ';';
                 $lastConfig = $config;
             }
 
@@ -174,7 +174,7 @@ class Toastr
         $this->notifications[] = [
             'type' => $type,
             'title' => $title,
-            'text' => $message,
+            'message' => $message,
             'options' => $options
         ];
 
