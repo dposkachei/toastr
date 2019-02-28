@@ -144,7 +144,11 @@ class Toastr
             }
 
             // Toastr output
-            $output .= 'window.toastr.' . $notification['type'] . "('" . str_replace("'", "\\'", str_replace(['&lt;', '&gt;'], ['<', '>'], e($notification['message']))) . "'" . (isset($notification['title']) ? ", '" . str_replace("'", "\\'", htmlentities($notification['title'])) . "'" : null) . ');';
+            $output .= 'window.toastrNotification = ' . json_encode([
+                    'type' => $notification['type'],
+                    'title' => str_replace("'", "\\'", htmlentities($notification['title'])),
+                    'text' => str_replace("'", "\\'", str_replace(['&lt;', '&gt;'], ['<', '>'], e($notification['message']))),
+                ]) . ';';
         }
         $output .= '</script>';
 
