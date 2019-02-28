@@ -139,12 +139,12 @@ class Toastr
 
             // Config persists between toasts
             if ($config != $lastConfig) {
-                $output .= 'toastr.options = ' . json_encode($config) . ';';
+                $output .= 'window.toastrOptions = ' . json_encode($config) . ';';
                 $lastConfig = $config;
             }
 
             // Toastr output
-            $output .= 'toastr.' . $notification['type'] . "('" . str_replace("'", "\\'", str_replace(['&lt;', '&gt;'], ['<', '>'], e($notification['message']))) . "'" . (isset($notification['title']) ? ", '" . str_replace("'", "\\'", htmlentities($notification['title'])) . "'" : null) . ');';
+            $output .= 'window.toastr.' . $notification['type'] . "('" . str_replace("'", "\\'", str_replace(['&lt;', '&gt;'], ['<', '>'], e($notification['message']))) . "'" . (isset($notification['title']) ? ", '" . str_replace("'", "\\'", htmlentities($notification['title'])) . "'" : null) . ');';
         }
         $output .= '</script>';
 
